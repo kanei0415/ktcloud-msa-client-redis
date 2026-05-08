@@ -6,7 +6,13 @@ object Versions {
 plugins {
     kotlin("jvm")
     kotlin("kapt")
+
+    id("java-library")
+    id("maven-publish")
 }
+
+group = "com.github.kanei0415"
+version = "1.0.0"
 
 dependencies {
     compileOnly("jakarta.servlet:jakarta.servlet-api:6.0.0")
@@ -22,4 +28,12 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINE}")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:${Versions.COROUTINE}")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-slf4j:${Versions.COROUTINE}")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+        }
+    }
 }

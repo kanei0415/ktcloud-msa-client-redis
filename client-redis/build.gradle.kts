@@ -37,3 +37,12 @@ publishing {
         }
     }
 }
+
+tasks.jar {
+    enabled = true
+    archiveClassifier.set("")
+}
+
+tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar") {
+    enabled = false
+}

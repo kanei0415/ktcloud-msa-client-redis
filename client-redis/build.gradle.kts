@@ -33,6 +33,7 @@ dependencies {
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
+            artifactId = "ktcloud-market-msa-client-redis"
             from(components["java"])
         }
     }

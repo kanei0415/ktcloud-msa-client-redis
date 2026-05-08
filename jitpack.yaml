@@ -2,4 +2,4 @@ jdk:
   - openjdk17
 
 install:
-  - ./gradlew :common:publishToMavenLocal -Pgroup=com.github.kanei0415 -Pversion=$JITPACK_VERSION
+  - ./gradlew :client-redis:publishToMavenLocal -Pgroup=com.github.kanei0415 -Pversion=$JITPACK_VERSION
